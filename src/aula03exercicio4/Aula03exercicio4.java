@@ -12,6 +12,7 @@ public class Aula03exercicio4 {
        janela.setLocationRelativeTo(null);
        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        janela.setVisible(true);
+       
     }
     
 }
