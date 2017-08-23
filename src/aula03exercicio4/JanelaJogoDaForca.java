@@ -59,18 +59,23 @@ public class JanelaJogoDaForca extends JFrame {
 
             char[] test = texto.getText().toCharArray();
             //char[] palavra = palavraSecreta.getPassword();
-
+            int i = 0;
             String pala = new String(palavraSecreta.getPassword());
             System.out.println(pala);
             System.out.println(test);
 
             if (pala.indexOf(test[0]) != -1) {
+                while (i < pala.length()) {
+                    if (pala.charAt(i) == test[0]) {
+                        interrogacao[i] = test[0];
+                        etiqueta2.setText(Arrays.toString(interrogacao));
+                    }
+                    i++;
+                }
                 JOptionPane.showMessageDialog(null, "Boa, você acertou a letra " + test[0]);
-                interrogacao[pala.indexOf(test[0])] = test[0];
-                etiqueta2.setText(Arrays.toString(interrogacao));
                 texto.setText("");
                 texto.requestFocus();
-                if (interrogacao.equals(palavraSecreta.getPassword())) {
+                if (Arrays.equals(interrogacao, palavraSecreta.getPassword())) {
                     JOptionPane.showConfirmDialog(null, "PARABÉNS!!! VOCÊ CONCLUIU O JOGO!");
                 }
             } else {
