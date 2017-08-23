@@ -80,10 +80,12 @@ public class JanelaJogoDaForca extends JFrame {
                 }
             } else {
                 contadorErro++;
-                if (contadorErro > 0 && contadorErro < 5) {
+                if (contadorErro < 5) {
                     JOptionPane.showMessageDialog(null, "Você já ainda tem " + (5 - contadorErro) + " tentativas. Escolha com sabedoria");
+                    texto.setText("");
+                    texto.requestFocus();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Você já esgotou as suas chances.");
+                    JOptionPane.showMessageDialog(null, "Você já esgotou as suas chances. Tente novamente.");
 
                 }
             }
